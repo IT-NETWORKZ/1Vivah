@@ -1,0 +1,44 @@
+/* ==========================================================
+   Global custom styles (overrides / extends Bootstrap)
+   ========================================================== */
+
+:root {
+  --app-primary: #2f5df5;
+  --app-sidebar-bg: #1c2333;
+  --app-sidebar-text: #cfd3dc;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* Layout wrappers */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+/* Sidebar */
+.app-sidebar {
+  width: 250px;
+  background-color: var(--app-sidebar-bg);
+  color: var(--app-sidebar-text);
+  min-height: 100vh;
+}
+
+.app-sidebar a {
+  color: var(--app-sidebar-text);
+  text-decoration: none;
+}
+
+.app-sidebar a:hover,
+.app-sidebar a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,19 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+
+// Bootstrap CSS/JS
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+
+// Custom global styles (loaded after bootstrap so it can override)
+import './assets/styles/global.css'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>,
+)
