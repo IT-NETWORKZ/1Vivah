@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #2b705e; /* Solid elegant matrimony green theme */
+  background: rgba(0, 0, 0, 0.25); 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -15,6 +15,7 @@
 .vivah-navbar-wrapper.vivah-scrolled {
   position: fixed;
   animation: vivah-slideDown 0.3s ease-in-out;
+   background-color:#2b705e;
 }
 
 @keyframes vivah-slideDown {

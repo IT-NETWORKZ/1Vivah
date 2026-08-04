@@ -1,16 +1,14 @@
-/* --- 1Vivah Hero Slider Styles --- */
-
 .vivah-hero-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - 85px); /* Perfectly fits desktop view alongside navbar */
-  min-height: 550px;
+  height: 540px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #111;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Individual Slide Backgrounds with smooth crossfade */
 .vivah-slide {
   position: absolute;
   top: 0;
@@ -19,9 +17,9 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
 }
 
 .vivah-slide.active {
@@ -29,166 +27,196 @@
   z-index: 2;
 }
 
-/* Dark cinematic overlay so background images stay clear yet readable */
 .vivah-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
+  background: rgba(0, 0, 0, 0.25);
 }
 
-/* Central Content Container */
 .vivah-hero-content-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  padding: 1rem;
-}
-
-/* Heart-themed Frame Effect (matches reference layout) */
-.vivah-heart-frame {
   position: relative;
-  width: 520px;
-  height: 380px;
-  background: rgba(43, 112, 94, 0.35); /* Translucent elegant teal tint */
-  backdrop-filter: blur(3px);
-  border: 2px dashed rgba(255, 255, 255, 0.5);
-  border-radius: 255px 255px 220px 220px / 180px 180px 250px 250px; /* Heart-curve illusion border */
+  z-index: 10;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  animation: vivah-float 4s ease-in-out infinite;
-}
-
-@keyframes vivah-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  margin-top: 20px;
 }
 
 .vivah-hero-text {
-  color: #ffffff;
-  z-index: 3;
-}
-
-.vivah-sub-tag {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  color: #e0f2fe;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
 }
 
 .vivah-hero-title {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
+  font-style: italic;
   font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.8rem;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-}
-
-.vivah-hero-date {
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   letter-spacing: 1px;
-  color: #f1f5f9;
 }
 
-/* Subtle Floating Sparkles/Hearts Animation */
-.sparkle {
-  position: absolute;
-  font-size: 1.2rem;
-  animation: sparkleFloat 3s ease-in-out infinite;
-  opacity: 0.8;
+/* Semi-transparent form box matching reference layout */
+.vivah-search-box {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 18px 20px;
+  border-radius: 6px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.sparkle.s1 { top: 15%; left: 18%; animation-delay: 0s; }
-.sparkle.s2 { top: 75%; right: 20%; animation-delay: 1.5s; }
-.sparkle.s3 { top: 25%; right: 22%; animation-delay: 0.8s; }
-
-@keyframes sparkleFloat {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
-  50% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+.vivah-form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: flex-end;
 }
 
-/* Slider Navigation Arrows */
+.vivah-form-row:last-child {
+  margin-bottom: 0;
+}
+
+.vivah-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom proportions for clean alignment */
+.field-looking { flex: 1.2; }
+.field-aged { flex: 1.5; }
+.field-religion { flex: 1.5; }
+.field-caste { flex: 1.2; }
+.field-subcaste { flex: 1.2; }
+.field-marital { flex: 1.5; }
+.field-submit { flex: 1.1; }
+
+.vivah-form-group label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  margin-bottom: 3px;
+}
+
+.vivah-form-group select,
+.vivah-form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 0.85rem;
+  color: #333;
+  outline: none;
+}
+
+.vivah-form-group select:focus,
+.vivah-form-group input:focus {
+  border-color: #f4a261;
+}
+
+.age-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.age-to {
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+.vivah-find-btn {
+  background-color: #f4a261;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.vivah-find-btn:hover {
+  background-color: #e76f51;
+}
+
 .vivah-slider-btn {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
-  z-index: 20;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-  width: 50px;
-  height: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  z-index: 20;
 }
 
 .vivah-slider-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.vivah-slider-btn.prev { left: 25px; }
-.vivah-slider-btn.next { right: 25px; }
+.vivah-slider-btn.prev {
+  left: 15px;
+}
 
-/* Slide Indicators Dots */
+.vivah-slider-btn.next {
+  right: 15px;
+}
+
 .vivah-dots-container {
   position: absolute;
-  bottom: 25px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
   display: flex;
-  gap: 10px;
+  gap: 6px;
+  z-index: 20;
 }
 
 .vivah-dot {
-  width: 12px;
-  height: 12px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
-  background: transparent;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .vivah-dot.active {
   background: #ffffff;
-  transform: scale(1.2);
+  width: 18px;
+  border-radius: 4px;
 }
 
-/* Responsive adjustments for mobile/tablets */
-@media (max-width: 768px) {
-  .vivah-heart-frame {
-    width: 90%;
-    height: 300px;
-    padding: 1.5rem;
+/* Responsive design for tablets and mobile */
+@media (max-width: 900px) {
+  .vivah-form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .vivah-form-group {
+    width: 100%;
+  }
+  .vivah-hero-section {
+    height: 620px;
   }
   .vivah-hero-title {
-    font-size: 2.1rem;
-  }
-  .vivah-slider-btn {
-    display: none; /* Hide arrows on small mobile screens for clean touch UX */
+    font-size: 2.2rem;
   }
 }
