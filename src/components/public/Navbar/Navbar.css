@@ -1,0 +1,180 @@
+/* --- 1Vivah Scoped Navbar Styles --- */
+
+.vivah-navbar-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #2b705e; /* Solid elegant matrimony green theme */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sticky behavior when scrolling down */
+.vivah-navbar-wrapper.vivah-scrolled {
+  position: fixed;
+  animation: vivah-slideDown 0.3s ease-in-out;
+}
+
+@keyframes vivah-slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.vivah-nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Logo Image Styling */
+.vivah-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.vivah-logo-img {
+  height: 42px; /* Adjust height to match your asset image dimensions */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Navigation Links */
+.vivah-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vivah-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.vivah-link:hover,
+.vivah-link.active {
+  opacity: 0.85;
+}
+
+.vivah-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.vivah-link:hover::after,
+.vivah-link.active::after {
+  width: 100%;
+}
+
+/* Action Buttons */
+.vivah-desktop-auth,
+.vivah-mobile-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vivah-mobile-auth-actions {
+  display: none;
+}
+
+.vivah-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.vivah-btn-login {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.vivah-btn-login:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.vivah-btn-register {
+  color: #2b705e;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vivah-btn-register:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu Toggle Button */
+.vivah-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Responsive Rules for Small Devices (Mobile & Tablets) */
+@media (max-width: 960px) {
+  .vivah-desktop-auth {
+    display: none;
+  }
+
+  .vivah-menu-toggle {
+    display: block;
+  }
+
+  .vivah-nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2b705e;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.4s ease-in-out;
+    pointer-events: none;
+  }
+
+  .vivah-nav-links.vivah-mobile-open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    pointer-events: auto;
+  }
+
+  .vivah-mobile-auth-actions {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}

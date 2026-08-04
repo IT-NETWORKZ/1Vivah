@@ -25,9 +25,9 @@ export default function AppRoutes() {
   return (
     <Routes>
       {/* Public */}
-      <Route element={<MainLayout />}>
+      {/* <Route element={<MainLayout />}> */}
         <Route path="/" element={<Home />} />
-      </Route>
+      {/* </Route> */}
       <Route path="/login" element={<Login />} />
 
       {/* Admin (protected) */}
