@@ -20,6 +20,7 @@ import AdminSettings from '../pages/admin/Settings.jsx'
 import SuperAdminDashboard from '../pages/superadmin/Dashboard.jsx'
 import ManageAdmins from '../pages/superadmin/ManageAdmins.jsx'
 import SystemSettings from '../pages/superadmin/SystemSettings.jsx'
+import Register from '../pages/public/Register.jsx'
 
 export default function AppRoutes() {
   return (
@@ -29,6 +30,7 @@ export default function AppRoutes() {
         <Route path="/" element={<Home />} />
       </Route>
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
       {/* Admin (protected) */}
       <Route
@@ -37,22 +39,17 @@ export default function AppRoutes() {
           <ProtectedRoute allowedRoles={['admin', 'superadmin']}>
             <AdminLayout />
           </ProtectedRoute>
-        }
-      >
+        }>
         <Route index element={<AdminDashboard />} />
         <Route path="users" element={<AdminUsers />} />
         <Route path="settings" element={<AdminSettings />} />
       </Route>
 
       {/* Superadmin (protected) */}
-      <Route
-        path="/superadmin"
-        element={
-          <ProtectedRoute allowedRoles={['superadmin']}>
-            <SuperAdminLayout />
-          </ProtectedRoute>
-        }
-      >
+      <Route path="/superadmin" element={<ProtectedRoute allowedRoles={['superadmin']}>
+        <SuperAdminLayout />
+      </ProtectedRoute>}>
+
         <Route index element={<SuperAdminDashboard />} />
         <Route path="admins" element={<ManageAdmins />} />
         <Route path="settings" element={<SystemSettings />} />
