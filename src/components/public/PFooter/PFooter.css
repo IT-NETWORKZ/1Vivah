@@ -1,0 +1,107 @@
+.vivah-footer {
+  width: 100%;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 50px 20px 20px 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.vivah-footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 4-Column Footer Grid */
+.vivah-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.vivah-footer-col h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.col-heading-icon {
+  color: #0284c7;
+}
+
+.vivah-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vivah-footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.vivah-footer-col ul li a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.vivah-footer-col ul li a:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+/* Social Media Circular Icons */
+.vivah-footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.social-icon:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.social-icon.fb { background-color: #3b5998; }
+.social-icon.tw { background-color: #1da1f2; }
+.social-icon.ig { background-color: #e1306c; }
+.social-icon.gp { background-color: #db4437; } /* Clean Google Red Background */
+.social-icon.yt { background-color: #ff0000; }
+
+
+/* Responsive layout for tablets and mobile */
+@media (max-width: 900px) {
+  .vivah-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .vivah-footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .vivah-footer-col h3 {
+    justify-content: center;
+  }
+}

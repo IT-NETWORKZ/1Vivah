@@ -14,7 +14,9 @@ const AboutUs = () => {
         <div className="vivah-about-header">
           <h2>About us</h2>
           <div className="vivah-about-divider">
-            <span className="divider-icon">❤️</span>
+            <span className="divider-icon">
+              <Heart size={16} fill="#e11d48" color="#e11d48" />
+            </span>
           </div>
           <p className="vivah-about-tagline">
             એક તમારા માટે યોગ્ય છે, એક વિવાહ પર તમારા માટે રાહ જોઈ રહ્યું છે.

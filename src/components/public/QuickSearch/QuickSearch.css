@@ -1,0 +1,210 @@
+.vivah-quicksearch-section {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.vivah-quicksearch-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Divider Styling */
+.vivah-how-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.vivah-how-divider::before,
+.vivah-how-divider::after {
+  content: "";
+  height: 1px;
+  width: 50px;
+  background-color: #d1d5db;
+  display: inline-block;
+}
+
+.divider-icon {
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quick Search Trigger Button */
+.vivah-quicksearch-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.vivah-quicksearch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+background-color: #f4a261;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.vivah-quicksearch-btn:hover {
+ background-color: #e76f51;
+}
+
+.vivah-quicksearch-btn:active {
+  transform: scale(0.98);
+}
+
+/* Panel Wrapper */
+.vivah-quicksearch-panel {
+  width: 100%;
+  animation: fadeInPanel 0.3s ease-in-out;
+}
+
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Status Filter Links Line */
+.vivah-status-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.status-link {
+  background: none;
+  border: none;
+  color: #0284c7;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.status-link:hover,
+.status-link.active {
+  color: #e11d48;
+  text-decoration: underline;
+}
+
+.status-separator {
+  color: #d1d5db;
+}
+
+/* 4 Cards Grid Structure */
+.vivah-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Individual Card */
+.vivah-qs-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Header with Circle */
+.qs-card-header {
+  background: linear-gradient(to bottom, #f3f4f6 0%, #ffffff 100%);
+  padding: 20px 15px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.qs-avatar-circle {
+  width: 55px;
+  height: 55px;
+  background-color: #e5e7eb;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.qs-card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Scrollable List Area */
+.qs-scroll-list {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+/* Custom scrollbar styling */
+.qs-scroll-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.qs-scroll-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.qs-scroll-list::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 4px;
+}
+
+.qs-list-item {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.qs-list-item:last-child {
+  border-bottom: none;
+}
+
+.qs-list-item:hover {
+  background-color: #f0fdf4;
+  color: #0284c7;
+  font-weight: 500;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .vivah-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .vivah-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
