@@ -1,0 +1,110 @@
+.vivah-guest-section {
+  position: relative;
+  width: 100%;
+  padding: 5px 20px; /* Adjusted padding as requested */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Removed the dark overlay so background image is fully natural */
+.vivah-guest-overlay {
+  display: none; 
+}
+
+.vivah-guest-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0; /* Internal breathing room since section padding is slim */
+}
+
+/* Section Header */
+.vivah-guest-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.vivah-guest-header h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Ensures text readability over clear image */
+}
+
+.vivah-guest-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vivah-guest-divider::before,
+.vivah-guest-divider::after {
+  content: "";
+  height: 1px;
+  width: 50px;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+}
+
+.divider-icon {
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+
+/* Cards Grid Layout */
+.vivah-guest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Individual Card Styling */
+.vivah-guest-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guest-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 4px 0;
+}
+
+.guest-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e11d48;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.guest-message {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive layout for tablets and mobile */
+@media (max-width: 768px) {
+  .vivah-guest-section {
+    padding: 5px 15px;
+  }
+  .vivah-guest-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

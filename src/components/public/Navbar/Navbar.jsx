@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, LogIn, UserPlus } from 'lucide-react';
 import './Navbar.css';
 
@@ -45,23 +46,25 @@ const Navbar = () => {
 
           {/* Mobile Auth Actions */}
           <div className="vivah-mobile-auth-actions">
-            <a href="#login" className="vivah-btn vivah-btn-login">
+    
+            <Link to="/login" className="vivah-btn vivah-btn-login">
               <LogIn size={16} /> Login
-            </a>
-            <a href="#register" className="vivah-btn vivah-btn-register">
+            </Link>
+            <Link to="/register" className="vivah-btn vivah-btn-register" >
               <UserPlus size={16} /> Register
-            </a>
+            </Link>
           </div>
         </nav>
 
         {/* Desktop Auth Buttons */}
         <div className="vivah-desktop-auth">
-          <a href="#login" className="vivah-btn vivah-btn-login">
-            <LogIn size={16} /> Login
-          </a>
-          <a href="#register" className="vivah-btn vivah-btn-register">
-            <UserPlus size={16} /> Register
-          </a>
+        
+          <Link to="/login" className="vivah-btn vivah-btn-login" >
+              <LogIn size={16} /> Login
+            </Link>
+            <Link to="/register" className="vivah-btn vivah-btn-register">
+              <UserPlus size={16} /> Register
+            </Link>
         </div>
 
         {/* Mobile Toggle */}
